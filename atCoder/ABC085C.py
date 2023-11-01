@@ -6,6 +6,7 @@ bills = [10000, 5000, 1000]
 divBills = [0, 0, 0]
 for cnt in range(len(bills)):
   divBills[cnt] = numY // bills[cnt]
+print(divBills)
 
 cntBills = [0, 0, 0]
 factBills = [-1, -1, -1]
