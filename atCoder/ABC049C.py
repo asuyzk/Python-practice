@@ -2,25 +2,30 @@ inS = input()
 strS = list(inS)
 
 strT = []
+cnt = 0
 while len(strS) >= 5:
-  s7 = "".join(strS[0:7])
+  s8 = "".join(strS[cnt:cnt+8])
 
-  if "dreamer" in s7:
-    strT.append("dreamer")
-    del strS[0:7]
-  elif "eraser" in s7:
+  if "dreamer" in s8:
+    if "dreamera" in s8:
+      strT.append("dream")
+      cnt += 5
+    else:
+      strT.append("dreamer")
+      cnt += 7
+  elif "eraser" in s8:
     strT.append("eraser")
-    del strS[0:6]
-  elif "dream" in s7:
+    cnt += 6
+  elif "dream" in s8:
     strT.append("dream")
-    del strS[0:5]
-  elif "erase" in s7:
+    cnt += 5
+  elif "erase" in s8:
     strT.append("erase")
-    del strS[0:5]
+    cnt += 5
   else:
     break
   
-  print("".join(strT))
+  # print("".join(strT))
 
 if inS == "".join(strT):
   print("YES")
