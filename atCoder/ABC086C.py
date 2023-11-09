@@ -1,19 +1,19 @@
 numN = int(input())
-timeT = ["0 0 0"]
-timeT = timeT + [input() for cntIn in range(numN)]
-print(timeT)
+timeT = ["0 0 0"] + [input() for cntIn in range(numN)]
 
 flag = 0
 for cntN in range(1, numN + 1):
   behindP = list(map(int, timeT[cntN-1].split()))
   curtP = list(map(int, timeT[cntN].split()))
-  print(str(curtP) + " - " + str(behindP))
 
-  if curtP[0] < curtP[1] - behindP[1] or curtP[0] < curtP[2] - behindP[2]:
+  if curtP[1] == behindP[1] and curtP[2] == behindP[2]:
+    flag = 1
+    break
+  elif curtP[0] < curtP[1] + curtP[2]:
     flag = 1
     break
 
 if flag == 0:
-  print("YES")
+  print("Yes")
 else:
-  print("NO")
+  print("No")
